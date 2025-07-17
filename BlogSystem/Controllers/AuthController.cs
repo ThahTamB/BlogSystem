@@ -34,8 +34,10 @@ namespace BlogSystem.Controllers
             return View();
         }
 
-       
+        public IActionResult AccessDenied() { 
+            return View();
 
+        }
        
 
         [HttpPost]
@@ -109,7 +111,7 @@ namespace BlogSystem.Controllers
             await _context.SaveChangesAsync();
 
             // Tự động đăng nhập sau khi đăng ký
-            var claims = new List<Claim>
+            var claims = new List<Claim>    
     {
         new Claim(ClaimTypes.Name, newUser.DisplayName),
         new Claim(ClaimTypes.Email, newUser.Email),
@@ -124,4 +126,6 @@ namespace BlogSystem.Controllers
             return RedirectToAction("Index", "Home");
         }
     }
+
+
 }

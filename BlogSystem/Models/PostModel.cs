@@ -12,6 +12,7 @@ public class Post
     public string? ImageUrl { get; set; }  
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
+    public string Status { get; set; } = "Draft";
 
 
     // SEO

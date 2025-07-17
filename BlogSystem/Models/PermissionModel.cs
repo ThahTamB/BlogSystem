@@ -10,6 +10,7 @@ namespace BlogSystem.Models
         [Required]
         [MaxLength(100)]
         public string Name { get; set; } 
+        public string Code { get; set; } // Unique code for the permission, e.g., "CanEditPosts"
 
         public ICollection<RolePermission> RolePermissions { get; set; }
     }
